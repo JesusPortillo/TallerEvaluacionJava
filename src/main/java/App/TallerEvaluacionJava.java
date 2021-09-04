@@ -60,6 +60,7 @@ public class TallerEvaluacionJava {
                     obj.MostrarParesImpares();
                     break;
                 case 6:
+                    obj.MostrarParesImparesConFor();
                     break;
                 case 7:
                     break;

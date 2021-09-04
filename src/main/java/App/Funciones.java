@@ -51,4 +51,16 @@ public class Funciones {
             actual++;
         }
     }
+
+    public void MostrarParesImparesConFor(){
+        for (int i = 1; i <= 100; i++) {
+            if (i % 2 == 0){
+                out.println("El numero " + i + " es par");
+            }else {
+                out.println("El numero " + i + " es impar");
+            }
+        }
+    }
+
+
 }
