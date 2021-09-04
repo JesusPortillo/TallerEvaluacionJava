@@ -1,5 +1,7 @@
 package App;
 
+import java.text.Normalizer;
+import java.util.Locale;
 import java.util.Scanner;
 import static java.lang.System.*;
 
@@ -8,7 +10,7 @@ public class TallerEvaluacionJava {
         Funciones obj = new Funciones();
         int seleccion;
         do {
-            out.println("Seleccione un item del menu");
+            out.println("Seleccione un item del menú");
             out.println("1- Punto 1\n2- Punto 2\n3- Punto 3\n4- Punto 4\n5- Punto 5\n" +
                     "6- Punto 6\n7- Punto 7\n8- Punto 8\n9- Punto 9\n10- Punto 10\n" +
                     "11- Punto 11\n12- Punto 12\n13- Punto 13\n14- Punto 14\n15- Punto 15\n" +
@@ -63,6 +65,15 @@ public class TallerEvaluacionJava {
                     obj.MostrarNumeroMayorIgualCero();
                     break;
                 case 8:
+                    String dia;
+                    out.println("Ingrese un dia de la semana");
+                    dia = scanner.next().toLowerCase();
+                    eliminarAcentos(dia);
+                    out.println(dia);
+                    if (dia.chars().allMatch(Character::isDigit)){
+                        out.println("Ingresar algo en formato numerico no es válido aquí");
+                    }
+                    obj.VerificarDiaLaboral(dia);
                     break;
                 case 9:
                     break;
@@ -85,10 +96,27 @@ public class TallerEvaluacionJava {
                 case 18:
                     break;
                 default:
-                    out.println("No ha ingresado ninguna opcion valida, recuerde que van desde el numero 1 al 19");
+                    out.println("No ha ingresado ninguna opción valida, recuerde que van desde el numero 1 al 19");
                     break;
 
             }
         } while (seleccion != 19);
+    }
+    public static String eliminarAcentos(String str) {
+
+        final String ORIGINAL = "áéíóú";
+        final String REEMPLAZO = "aeiou";
+
+        if (str == null) {
+            return null;
+        }
+        char[] array = str.toCharArray();
+        for (int indice = 0; indice < array.length; indice++) {
+            int pos = ORIGINAL.indexOf(array[indice]);
+            if (pos > -1) {
+                array[indice] = REEMPLAZO.charAt(pos);
+            }
+        }
+        return new String(array);
     }
 }

@@ -33,7 +33,7 @@ public class Funciones {
 
     public void CalcularAreaCirculo(double radio){
         double res = Math.PI * Math.pow(radio,2);
-        out.println("El area del circulo es: " + res);
+        out.println("El área del circulo es: " + res);
     }
 
     public void CalcularPrecioTotalConIVA(double precio){
@@ -78,6 +78,33 @@ public class Funciones {
                 break;
             }
         }while (numeroPorProbar < 0);
+    }
+
+    public void VerificarDiaLaboral(String dia){
+        switch (dia){
+            case "lunes":
+                out.println("El lunes es un dia laboral, sin tener en cuenta festividades");
+                break;
+            case "martes":
+                out.println("El martes es un dia laboral, sin tener en cuenta festividades");
+                break;
+            case "miercoles":
+                out.println("El miércoles es un dia laboral, sin tener en cuenta festividades");
+                break;
+            case "jueves":
+                out.println("El jueves es un dia laboral, sin tener en cuenta festividades");
+                break;
+            case "viernes":
+                out.println("El viernes es un dia laboral, sin tener en cuenta festividades");
+                break;
+            case "sabado":
+                out.println("El sábado no es un dia laboral");
+                break;
+            case "domingo":
+                out.println("El domingo no es un dia laboral");
+                break;
+
+        }
     }
 
 }
