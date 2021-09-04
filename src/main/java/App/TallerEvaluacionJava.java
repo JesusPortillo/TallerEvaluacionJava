@@ -28,7 +28,6 @@ public class TallerEvaluacionJava {
                         numero1 = scanner.next();
                         out.println("Por favor ingrese el segundo numero");
                         numero2 = scanner.next();
-
                         obj.Mayor(Double.parseDouble(numero1.replace(",",".")), Double.parseDouble(numero2.replace(",",".")));
                     }catch (Exception ex){
                         out.println("Por favor ingresar solo numeros");
@@ -39,7 +38,6 @@ public class TallerEvaluacionJava {
                         String radio;
                         out.println("Por favor ingrese el valor del radio");
                         radio = scanner.next();
-
                         obj.CalcularAreaCirculo(Double.parseDouble(radio.replace(",",".")));
                     }catch (Exception ex){
                         out.println("Por favor ingresar solo numeros");
@@ -50,7 +48,6 @@ public class TallerEvaluacionJava {
                         String precio;
                         out.println("Por favor ingrese el precio");
                         precio = scanner.next();
-
                         obj.CalcularPrecioTotalConIVA(Double.parseDouble(precio.replace(",",".")));
                     }catch (Exception ex){
                         out.println("Por favor ingresar solo numeros");
@@ -63,6 +60,7 @@ public class TallerEvaluacionJava {
                     obj.MostrarParesImparesConFor();
                     break;
                 case 7:
+                    obj.MostrarNumeroMayorIgualCero();
                     break;
                 case 8:
                     break;

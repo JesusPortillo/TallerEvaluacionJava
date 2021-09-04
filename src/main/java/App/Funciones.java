@@ -1,5 +1,7 @@
 package App;
 
+import java.util.Scanner;
+
 import static java.lang.System.*;
 
 public class Funciones {
@@ -61,6 +63,21 @@ public class Funciones {
             }
         }
     }
-
+    public void MostrarNumeroMayorIgualCero(){
+        Scanner scanner = new Scanner(in);
+        double numeroPorProbar = 0;
+        do {
+            try {
+                out.println("Ingrese un numero mayor o igual a 0");
+                numeroPorProbar = scanner.nextDouble();
+                if (numeroPorProbar >= 0){
+                    out.println("El valor ingresado fue " + numeroPorProbar);
+                }
+            }catch (Exception ex){
+                out.println("Ingrese solo numeros");
+                break;
+            }
+        }while (numeroPorProbar < 0);
+    }
 
 }
