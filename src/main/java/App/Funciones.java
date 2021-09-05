@@ -1,6 +1,10 @@
 package App;
 
+import java.text.DateFormat;
 import java.text.Normalizer;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.Scanner;
 
 import static java.lang.System.*;
@@ -147,6 +151,56 @@ public class Funciones {
                 "La vocal i aparece: " + contI + "veces"+ "\n"+
                 "La vocal o aparece: " + contO + "veces"+ "\n"+
                 "La vocal u aparece: " + contU + "veces");
+    }
+    public void IgualoDiferente(String frase1, String frase2){
+        if (frase1.equalsIgnoreCase(frase2)){
+            out.println("Las dos frases son iguales");
+        }else {
+            HashMap<Integer, String> distintos = new HashMap<>();
+            if (frase1.length() == frase2.length()){
+                for (int i = 0; i < frase1.length(); i++) {
+                    if (frase1.charAt(i) != frase2.charAt(i)){
+                        distintos.put(i, frase1.charAt(i)+" es distinto a "+frase2.charAt(i));
+                    }
+                }
+            }else if (frase1.length() > frase2.length()){
+                for (int i = 0; i < frase1.length(); i++) {
+                    if (i <= frase2.length() - 1){
+                        if (frase1.charAt(i) != frase2.charAt(i)){
+                            distintos.put(i, frase1.charAt(i)+" es distinto a "+frase2.charAt(i));
+                        }
+                    }else{
+                        distintos.put(i, "No tienen con quien comparar en frase 2: "+frase1.charAt(i));
+                    }
+                }
+            }else if (frase1.length() < frase2.length()){
+                for (int i = 0; i < frase2.length(); i++) {
+                    if (i <= frase1.length() - 1){
+                        if (frase1.charAt(i) != frase2.charAt(i)){
+                            distintos.put(i, frase1.charAt(i)+" es distinto a "+frase2.charAt(i));
+                        }
+                    }else{
+                        distintos.put(i, "No tienen con quien comparar en frase 1: "+frase2.charAt(i));
+                    }
+                }
+            }
+            distintos.entrySet().stream().forEach(out::println);
+        }
+    }
+    public void VerFechaHora(){
+        Date date = new Date();
+        DateFormat hourdateFormat = new SimpleDateFormat("HH:mm:ss dd/MM/yyyy");
+        System.out.println("Hora y fecha: "+hourdateFormat.format(date));
+    }
+
+    public void ContarHastaMil(double inicio){
+        if (inicio <= 998){
+            for (double i = inicio; i <= 1000; i+=2) {
+                out.println(i);
+            }
+        }else {
+            out.println("El numero maximo a ingresar debe ser 1000");
+        }
     }
 
 }

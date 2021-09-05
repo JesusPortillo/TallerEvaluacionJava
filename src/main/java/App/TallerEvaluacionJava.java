@@ -107,10 +107,30 @@ public class TallerEvaluacionJava {
                         }
                         break;
                     case 12:
+                        String frase1;
+                        String frase2;
+                        out.println("Ingrese frase 1 a comparar");
+                        frase1 = scanner.next();
+                        out.println("Ingrese frase 2 a comparar");
+                        frase2 = scanner.next();
+                        if (frase1.chars().allMatch(Character::isDigit) || frase2.chars().allMatch(Character::isDigit)){
+                            out.println("Ingresar algo en formato numerico no es valido aqui");
+                        }else {
+                            obj.IgualoDiferente(frase1, frase2);
+                        }
                         break;
                     case 13:
+                        obj.VerFechaHora();
                         break;
                     case 14:
+                        try {
+                            double inicio;
+                            out.println("Ingrese el valor inicial");
+                            inicio = scanner.nextDouble();
+                            obj.ContarHastaMil(inicio);
+                        }catch (Exception ex){
+                            out.println("Por favor ingresar solo numeros");
+                        }
                         break;
                     case 15:
                         break;
