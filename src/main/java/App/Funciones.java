@@ -1,5 +1,6 @@
 package App;
 
+import java.text.Normalizer;
 import java.util.Scanner;
 
 import static java.lang.System.*;
@@ -81,7 +82,7 @@ public class Funciones {
     }
 
     public void VerificarDiaLaboral(String dia){
-        switch (dia){
+        switch (eliminarAcentos(dia)){
             case "lunes":
                 out.println("El lunes es un dia laboral, sin tener en cuenta festividades");
                 break;
@@ -89,7 +90,7 @@ public class Funciones {
                 out.println("El martes es un dia laboral, sin tener en cuenta festividades");
                 break;
             case "miercoles":
-                out.println("El miércoles es un dia laboral, sin tener en cuenta festividades");
+                out.println("El miercoles es un dia laboral, sin tener en cuenta festividades");
                 break;
             case "jueves":
                 out.println("El jueves es un dia laboral, sin tener en cuenta festividades");
@@ -98,13 +99,24 @@ public class Funciones {
                 out.println("El viernes es un dia laboral, sin tener en cuenta festividades");
                 break;
             case "sabado":
-                out.println("El sábado no es un dia laboral");
+                out.println("El sabado no es un dia laboral");
                 break;
             case "domingo":
                 out.println("El domingo no es un dia laboral");
                 break;
 
         }
+    }
+    public String eliminarAcentos(String cadena) {
+
+        cadena.toUpperCase();
+        cadena = Normalizer.normalize(cadena, Normalizer.Form.NFD);
+        cadena = cadena.replaceAll("[^\\p{ASCII}]", "");
+        return cadena.toLowerCase();
+    }
+
+    public void ConcatenerFraseConOtra(String frase){
+        out.println("La sonrisa sera la mejor arma contra la tristeza ".replace("a", "e").concat(frase));
     }
 
 }
