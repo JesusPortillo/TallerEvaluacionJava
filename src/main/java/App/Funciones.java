@@ -202,5 +202,39 @@ public class Funciones {
             out.println("El numero maximo a ingresar debe ser 1000");
         }
     }
+    public void menu(){
+        int seleccion = 0;
+        do {
+            try {
+                System.out.println("****** GESTION CINEMATOGRAFICA ********");
+                System.out.println(" 1-NUEVO ACTOR\n 2-BUSCAR ACTOR\n 3-ELIMINAR ACTOR\n 4-MODIFICAR ACTOR\n 5-VER TODOS LOS ACTORES" +
+                        "\n 6-VER PELICULAS DE LOS ACTORES\n 7-VER CATEGORIA DE LAS PELICULAS DE LOS ACTORES\n 8-SALIR");
+                Scanner scanner = new Scanner(System.in);
+                seleccion = scanner.nextInt();
+
+                switch (seleccion) {
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                    case 5:
+                        break;
+                    case 6:
+                        break;
+                    case 7:
+                        break;
+                    default:
+                        out.println("Opcion incorrecta");
+
+                }
+            }catch (Exception ex){
+                out.println("Solo esta permitido ingresar alguna de las opciones");
+            }
+        }while (seleccion != 8);
+    }
 
 }

@@ -133,6 +133,7 @@ public class TallerEvaluacionJava {
                         }
                         break;
                     case 15:
+                        obj.menu();
                         break;
                     case 16:
                         break;
