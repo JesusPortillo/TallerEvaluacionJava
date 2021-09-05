@@ -104,6 +104,8 @@ public class Funciones {
             case "domingo":
                 out.println("El domingo no es un dia laboral");
                 break;
+            default:
+                out.println("Este no es un dia de la semana");
 
         }
     }
@@ -117,6 +119,34 @@ public class Funciones {
 
     public void ConcatenerFraseConOtra(String frase){
         out.println("La sonrisa sera la mejor arma contra la tristeza ".replace("a", "e").concat(frase));
+    }
+
+    public void EliminarEspacios(String frase){
+        out.println(frase.replace(" ", ""));
+    }
+
+    public void ContarVocalesConLongitud(String frase){
+        int contA = 0, contE = 0, contI = 0, contO = 0, contU = 0;
+        frase.toLowerCase();
+        for (int i = 0; i < frase.length(); i++) {
+            if (frase.charAt(i) == 'a'){
+                contA++;
+            }else if (frase.charAt(i) == 'e'){
+                contE++;
+            }else if (frase.charAt(i) == 'i'){
+                contI++;
+            }else if (frase.charAt(i) == 'o'){
+                contO++;
+            }else if (frase.charAt(i) == 'u'){
+                contU++;
+            }
+        }
+        out.println("La longitud de la frase es de " + frase.length() + "\n"+
+                "La vocal a aparece: " + contA + "veces"+ "\n"+
+                "La vocal e aparece: " + contE + "veces"+ "\n"+
+                "La vocal i aparece: " + contI + "veces"+ "\n"+
+                "La vocal o aparece: " + contO + "veces"+ "\n"+
+                "La vocal u aparece: " + contU + "veces");
     }
 
 }

@@ -17,6 +17,7 @@ public class TallerEvaluacionJava {
                         "11- Punto 11\n12- Punto 12\n13- Punto 13\n14- Punto 14\n15- Punto 15\n" +
                         "16- Punto 16\n17- Punto 17\n18- Punto 18\n19- Salir");
                 Scanner scanner = new Scanner(System.in);
+                scanner.useDelimiter("\n");
                 seleccion = scanner.nextInt();
 
                 switch (seleccion) {
@@ -70,24 +71,40 @@ public class TallerEvaluacionJava {
                         out.println("Ingrese un dia de la semana");
                         dia = scanner.next();
                         if (dia.chars().allMatch(Character::isDigit)){
-                            out.println("Ingresar algo en formato numerico no es válido aquí");
+                            out.println("Ingresar algo en formato numerico no es valido aqui");
                         }
                         obj.VerificarDiaLaboral(dia);
                         break;
                     case 9:
                         String frase;
                         out.println("Ingrese una frase");
-                        scanner.useDelimiter("\n");
+
                         frase = scanner.next();
                         if (frase.chars().allMatch(Character::isDigit)){
-                            out.println("Ingresar algo en formato numerico no es válido aquí");
+                            out.println("Ingresar algo en formato numerico no es valido aqui");
                         }else {
                             obj.ConcatenerFraseConOtra(frase);
                         }
                         break;
                     case 10:
+                        String fraseConEspacios;
+                        out.println("Ingrese una frase");
+                        fraseConEspacios = scanner.next();
+                        if (fraseConEspacios.chars().allMatch(Character::isDigit)){
+                            out.println("Ingresar algo en formato numerico no es valido aqui");
+                        }else {
+                            obj.EliminarEspacios(fraseConEspacios);
+                        }
                         break;
                     case 11:
+                        String frasePorContar;
+                        out.println("Ingrese una frase");
+                        frasePorContar = scanner.next();
+                        if (frasePorContar.chars().allMatch(Character::isDigit)){
+                            out.println("Ingresar algo en formato numerico no es valido aqui");
+                        }else {
+                            obj.ContarVocalesConLongitud(frasePorContar);
+                        }
                         break;
                     case 12:
                         break;
