@@ -1,17 +1,17 @@
 package App;
 
 public class Lavadora extends Electrodomestico {
-    static final int CARGA_POR_DEFECTO = 5;
+    static final int cargaPorDefecto = 5;
     private int carga;
 
     public Lavadora() {
         super();
-        this.carga = CARGA_POR_DEFECTO;
+        this.carga = cargaPorDefecto;
     }
 
     public Lavadora(double precioBase, int peso) {
         super(precioBase, peso);
-        this.carga = CARGA_POR_DEFECTO;
+        this.carga = cargaPorDefecto;
     }
 
     public Lavadora(double precioBase, String color, char consumoEnergetico, int peso, int carga) {

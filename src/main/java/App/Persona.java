@@ -1,7 +1,7 @@
 package App;
 
 public class Persona {
-    private final char SEXO_POR_DEFECTO = 'H';
+    private final char sexoPorDefecto = 'H';
     private String nombre;
     private int edad, DNI, peso;
     private float altura;
@@ -75,7 +75,7 @@ public class Persona {
     }
 
     private char comprobarSexo(char sexo) {
-        char s = SEXO_POR_DEFECTO;
+        char s = sexoPorDefecto;
         if ("M".equals(sexo)) {
             s = 'M';
         }
@@ -89,8 +89,7 @@ public class Persona {
                 ", DNI=" + DNI +
                 ", peso=" + peso +
                 ", altura=" + altura +
-                ", sexo=" + sexo +
-                '}';
+                ", sexo=" + sexo;
     }
 
     private void generaDNI() {

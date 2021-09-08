@@ -208,17 +208,17 @@ public class TallerEvaluacionJava {
                         }
                         break;
                     case 17:
-                        double acumPrecioElectrodomesticos=0,acumPrecioLavadoras=0, acumPrecioTelevisores=0;
+                        double acumPrecioElectrodomesticos=0,contPrecioLavadoras=0, contPrecioTvs=0;
                         Electrodomestico licuadora1 = new Electrodomestico();
-                        Electrodomestico sanduchera1 = new Electrodomestico(100000,1);
-                        Electrodomestico portatil1 = new Electrodomestico(1700000,3);
-                        Electrodomestico ventilador1 = new Electrodomestico(150000,"blanco",'g',7);
+                        Electrodomestico sanduchera1 = new Electrodomestico(150000,1);
+                        Electrodomestico portatil1 = new Electrodomestico(240000,3);
+                        Electrodomestico ventilador1 = new Electrodomestico(180000,"blanco",'d',7);
                         Lavadora lavadora1 = new Lavadora();
-                        Lavadora lavadora2 = new Lavadora(200000,10);
-                        Lavadora lavadora3 = new Lavadora(300000,"Rojo",'B',15,30);
+                        Lavadora lavadora2 = new Lavadora(700000,15);
+                        Lavadora lavadora3 = new Lavadora(1000000,"blanco",'d',12,40);
                         Televisor televisor1 = new Televisor();
-                        Televisor televisor2 = new Televisor(600000,10);
-                        Televisor televisor3 = new Televisor(1800000,"lila",'F',8,50,true);
+                        Televisor televisor2 = new Televisor(1500000,8);
+                        Televisor televisor3 = new Televisor(3000000,"negro",'c',11,65,true);
                         Electrodomestico [] listaElectrodomesticos = {licuadora1,
                                 sanduchera1,
                                 portatil1,
@@ -235,18 +235,69 @@ public class TallerEvaluacionJava {
                                 acumPrecioElectrodomesticos+=e.precioFinal();
                             }
                             if (e instanceof  Lavadora){
-                                acumPrecioLavadoras+=e.precioFinal();
+                                contPrecioLavadoras+=e.precioFinal();
                             }
                             if(e instanceof  Televisor){
-                                acumPrecioTelevisores+=e.precioFinal();
+                                contPrecioTvs+=e.precioFinal();
                             }
                         }
-                        double precioTotal=acumPrecioElectrodomesticos+acumPrecioLavadoras+acumPrecioTelevisores;
+                        double precioTotal=acumPrecioElectrodomesticos+contPrecioLavadoras+contPrecioTvs;
                         System.out.println("EL precio de los electrodomesticos es "+acumPrecioElectrodomesticos+" COP, el precio de " +
-                                "las lavadoras es "+acumPrecioLavadoras+" COP y el precio de los televisores es "+acumPrecioTelevisores+
+                                "los televisores es "+contPrecioTvs+" COP y el precio de las lavadoras es "+contPrecioLavadoras+
                                 " para un precio total de "+precioTotal+" COP");
                         break;
                     case 18:
+                        Serie serie1 = new Serie();
+                        Serie serie2 = new Serie("flash","JJ");
+                        Serie serie3 = new Serie("arrow","heroe", "jack", 8);
+                        Serie serie4 = new Serie("The big bang theory","comedia", "ronald", 12);
+                        Serie serie5 = new Serie("Luke cage","ryan");
+                        Serie[] series ={serie1, serie2, serie3, serie4, serie5};
+                        Videojuego videojuego1 = new Videojuego();
+                        Videojuego videojuego2 = new Videojuego("Fifa",10000);
+                        Videojuego videojuego3 = new Videojuego("Fortnite","shooter","Epic games",100);
+                        Videojuego videojuego4 = new Videojuego("Clash royale","MOBA","Super cell",100000);
+                        Videojuego videojuego5 = new Videojuego("Forza horizon 4",300);
+
+                        Videojuego[] videojuegos={videojuego1, videojuego2, videojuego3, videojuego4, videojuego5};
+
+                        series[2].entregar();
+                        series[3].entregar();
+                        series[4].entregar();
+                        videojuegos[2].entregar();
+                        videojuegos[3].entregar();
+                        videojuegos[4].entregar();
+
+
+                        int cantidadEntregados=0;
+                        for (Serie s: series) {
+                            if (s.isEntregado()){
+                                cantidadEntregados+=1;
+                                s.devolver();
+                            }
+                        }
+                        for (Videojuego v: videojuegos) {
+                            if (v.isEntregado()){
+                                cantidadEntregados+=1;
+                                v.devolver();
+                            }
+                        }
+                        System.out.println("Existen "+cantidadEntregados +" entregados entre videojuegos y series");
+
+                        Videojuego videojuegoConMayorHoras = videojuegos[0];
+                        Serie serieConMayorTemporadas = series[0];
+
+                        for (int i = 1; i < videojuegos.length; i++) {
+                            if (videojuegos[i].compareTo(videojuegoConMayorHoras)==1){
+                                videojuegoConMayorHoras=videojuegos[i];
+                            }
+                            if (series[i].compareTo(serieConMayorTemporadas)==1){
+                                serieConMayorTemporadas=series[i];
+                            }
+                        }
+
+                        System.out.println("el videojuego con mas horas "+videojuegoConMayorHoras.toString());
+                        System.out.println("la serie con mas temporadas "+serieConMayorTemporadas.toString());
 
                         break;
                     case 19:
