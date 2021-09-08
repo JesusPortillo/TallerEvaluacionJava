@@ -208,9 +208,46 @@ public class TallerEvaluacionJava {
                         }
                         break;
                     case 17:
+                        double acumPrecioElectrodomesticos=0,acumPrecioLavadoras=0, acumPrecioTelevisores=0;
+                        Electrodomestico licuadora1 = new Electrodomestico();
+                        Electrodomestico sanduchera1 = new Electrodomestico(100000,1);
+                        Electrodomestico portatil1 = new Electrodomestico(1700000,3);
+                        Electrodomestico ventilador1 = new Electrodomestico(150000,"blanco",'g',7);
+                        Lavadora lavadora1 = new Lavadora();
+                        Lavadora lavadora2 = new Lavadora(200000,10);
+                        Lavadora lavadora3 = new Lavadora(300000,"Rojo",'B',15,30);
+                        Televisor televisor1 = new Televisor();
+                        Televisor televisor2 = new Televisor(600000,10);
+                        Televisor televisor3 = new Televisor(1800000,"lila",'F',8,50,true);
+                        Electrodomestico [] listaElectrodomesticos = {licuadora1,
+                                sanduchera1,
+                                portatil1,
+                                ventilador1,
+                                lavadora1,
+                                lavadora2,
+                                lavadora3,
+                                televisor1,
+                                televisor2,
+                                televisor3};
 
+                        for (Electrodomestico e: listaElectrodomesticos) {
+                            if(e instanceof Electrodomestico ){
+                                acumPrecioElectrodomesticos+=e.precioFinal();
+                            }
+                            if (e instanceof  Lavadora){
+                                acumPrecioLavadoras+=e.precioFinal();
+                            }
+                            if(e instanceof  Televisor){
+                                acumPrecioTelevisores+=e.precioFinal();
+                            }
+                        }
+                        double precioTotal=acumPrecioElectrodomesticos+acumPrecioLavadoras+acumPrecioTelevisores;
+                        System.out.println("EL precio de los electrodomesticos es "+acumPrecioElectrodomesticos+" COP, el precio de " +
+                                "las lavadoras es "+acumPrecioLavadoras+" COP y el precio de los televisores es "+acumPrecioTelevisores+
+                                " para un precio total de "+precioTotal+" COP");
                         break;
                     case 18:
+
                         break;
                     case 19:
                         System.exit(0);
