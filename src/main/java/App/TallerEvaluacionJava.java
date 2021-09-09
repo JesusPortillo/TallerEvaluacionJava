@@ -303,7 +303,6 @@ public class TallerEvaluacionJava {
                     case 19:
                         System.exit(0);
                         break;
-
                 }
             } catch (Exception ex) {
                 out.println("Ingrese una opcion valida");

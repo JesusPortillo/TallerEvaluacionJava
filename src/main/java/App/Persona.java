@@ -1,9 +1,15 @@
 package App;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class Persona {
+    static final List<String> letrasAsignacionDNI = Arrays.asList("T","R","W","A","G","M","Y","F","P","D","X","B","N","J","Z","S","Q","V","H","L","C","K","E");
     private final char sexoPorDefecto = 'H';
     private String nombre;
-    private int edad, DNI, peso;
+    private int edad;
+    private String DNI;
+    private int peso;
     private float altura;
     private char sexo;
 
@@ -93,7 +99,9 @@ public class Persona {
     }
 
     private void generaDNI() {
-        this.DNI = (int) (100000000 * Math.random());
+        int numeroDNI = (int) (100000000 * Math.random());
+        int resto = numeroDNI % 23;
+        this.DNI = numeroDNI+"-"+ letrasAsignacionDNI.get(resto);
     }
 
 
